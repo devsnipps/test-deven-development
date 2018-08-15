@@ -1,3 +1,17 @@
+TDD:
+Rspec, Capybara, Factory Girl
+
+Background Jobs:
+
+Redis, Sidekiq
+
+
+
+
+
+
 
 E commerce app:
-Name: Grocery
+Name: /products
+
+number_to_curreny helper method

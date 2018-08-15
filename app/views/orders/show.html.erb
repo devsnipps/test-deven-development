@@ -1,0 +1,12 @@
+Item Count: <%= @order.order_items.count %>
+<p>Empty Cart <%= link_to "Empty cart", @order, method: :delete %></p>
+<% @order.order_items.each do |item| %>
+<%= image_tag "products/#{item.product.image_url}" %>
+  <h2><%= item.product.name %></h2>
+  <p>qunatity: <%= link_to item.quantity, edit_order_item_path(item) %></p>
+  <p>Price:<%= print_price(item.product.price) %></p>
+  
+
+<% end %>
+<br><br>
+ Total price: &emsp;<%= print_price(@order.total) %>

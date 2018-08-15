@@ -22,8 +22,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :price %>
+    <%= form.label :price, "Price (like 2.99)" %>
     <%= form.text_field :price, id: :product_price %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :stock %>
+    <%= form.text_field :stock, id: :product_stock %>
   </div>
 
   <div class="field">

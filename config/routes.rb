@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :orders
+  resources :order_items
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
   
@@ -15,7 +17,10 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'posts#index'
-
+  
+  match '/auth/:provider/callback', to: 'sessions#create', via: :get
+  get '/login', to: redirect('/auth/twitter')
+  get "/logout", to: "sessions#destroy"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
